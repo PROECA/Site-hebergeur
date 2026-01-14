@@ -251,6 +251,11 @@ const pricingTiers = [
 export default function Pricing() {
   const { ref, isVisible } = useIntersectionObserver()
 
+  const handleCommander = (gameName: string, tierName: string, tierPrice: string) => {
+    const encodedPrice = tierPrice.replace(",", ".")
+    window.location.href = `/checkout?game=${encodeURIComponent(gameName)}&tier=${encodeURIComponent(tierName)}&price=${encodedPrice}`
+  }
+
   return (
     <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -317,7 +322,7 @@ export default function Pricing() {
 
                       <Button
                         className="w-full bg-accent hover:bg-accent/90 text-accent-foreground transition-all hover:scale-105 hover:shadow-lg hover:shadow-accent/50 btn-premium"
-                        onClick={() => window.open("https://nexahost.m1x.ovh/", "_blank")}
+                        onClick={() => handleCommander(category.name, plan.tier, plan.price)}
                       >
                         Commander
                       </Button>
