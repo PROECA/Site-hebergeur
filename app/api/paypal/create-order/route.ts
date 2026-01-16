@@ -1,12 +1,15 @@
 import { type NextRequest, NextResponse } from "next/server"
 
+const PAYPAL_BASE_URL =
+  process.env.PAYPAL_MODE === "live" ? "https://api-m.paypal.com" : "https://api-m.sandbox.paypal.com"
+
 export async function POST(request: NextRequest) {
   try {
-    const { game, tier, price } = await request.json()
+    const { game, tier, price, email, serverName, planKey } = await request.json()
 
     const auth = Buffer.from(`${process.env.PAYPAL_CLIENT_ID}:${process.env.PAYPAL_SECRET}`).toString("base64")
 
-    const tokenResponse = await fetch("https://api-m.paypal.com/v1/oauth2/token", {
+    const tokenResponse = await fetch(`${PAYPAL_BASE_URL}/v1/oauth2/token`, {
       method: "POST",
       headers: {
         Authorization: `Basic ${auth}`,
@@ -15,10 +18,18 @@ export async function POST(request: NextRequest) {
       body: "grant_type=client_credentials",
     })
 
+    if (!tokenResponse.ok) {
+      const errorData = await tokenResponse.json()
+      console.error("PayPal token error:", errorData)
+      return NextResponse.json({ error: "PayPal authentication failed", details: errorData }, { status: 401 })
+    }
+
     const tokenData = await tokenResponse.json()
     const accessToken = tokenData.access_token
 
-    const orderResponse = await fetch("https://api-m.paypal.com/v2/checkout/orders", {
+    const orderData = JSON.stringify({ game, tier, email, serverName, planKey })
+
+    const orderResponse = await fetch(`${PAYPAL_BASE_URL}/v2/checkout/orders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,18 +43,27 @@ export async function POST(request: NextRequest) {
               currency_code: "EUR",
               value: price.toString(),
             },
-            description: `${game} - ${tier}`,
-            custom_id: JSON.stringify({ game, tier }),
+            description: `NexaHost - ${game} ${tier}`,
+            custom_id: orderData,
           },
         ],
-        return_url: `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/success`,
-        cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/checkout?game=${game}&tier=${tier}&price=${price}`,
+        application_context: {
+          brand_name: "NexaHost",
+          landing_page: "LOGIN",
+          user_action: "PAY_NOW",
+          return_url: `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/payment-callback`,
+          cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/checkout?game=${game}&tier=${tier}&price=${price}`,
+        },
       }),
     })
 
     const order = await orderResponse.json()
 
-    // Find approve link
+    if (!orderResponse.ok) {
+      console.error("PayPal order error:", order)
+      return NextResponse.json({ error: "Failed to create PayPal order", details: order }, { status: 400 })
+    }
+
     const approveLink = order.links?.find((link: any) => link.rel === "approve")
 
     return NextResponse.json({
