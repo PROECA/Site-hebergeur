@@ -71,7 +71,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:support@nexa-host.com" className="hover:text-accent transition">
+                <a href="mailto:contact@nexa-host.zk-web.fr
+" className="hover:text-accent transition">
                   Email
                 </a>
               </li>
