@@ -1,109 +1,108 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Gamepad2, Wind, Zap, Cpu, Shirt, Dices } from "lucide-react"
+'use client';
 
-const games = [
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, Gamepad2, Globe, Car, Sword, MessageSquare, Cpu, Flame } from "lucide-react"
+
+const services = [
   {
-    id: "gmod",
-    title: "Garry's Mod",
-    description: "Serveurs optimisés pour les gamemodes populaires",
-    icon: Gamepad2,
-    color: "from-blue-500 to-blue-600",
-  },
-  {
-    id: "minecraft",
-    title: "Minecraft",
-    description: "Hébergement fluide sans se ruiner",
+    title: "Minecraft Hosting",
+    description: "Serveurs haute frequence pour Vanilla, Modded ou Plugins.",
     icon: Cpu,
-    color: "from-green-400 to-green-600",
+    color: "text-green-400",
+    bgColor: "bg-green-400/10",
   },
   {
-    id: "survival",
-    title: "Jeux de Survie",
-    description: "ARK, Rust, DayZ, Palworld et plus",
-    icon: Wind,
-    color: "from-amber-500 to-amber-600",
-  },
-  {
-    id: "racing",
-    title: "Assetto Corsa",
-    description: "Infrastructure pro pour les courses",
-    icon: Zap,
-    color: "from-orange-500 to-orange-600",
-  },
-  {
-    id: "redm",
-    title: "RedM",
-    description: "L'univers du Far West enfin accessible à petit prix",
-    icon: Shirt,
-    color: "from-red-500 to-red-600",
-  },
-  {
-    id: "fivem",
     title: "FiveM",
-    description: "La puissance au meilleur prix pour vos serveurs RP",
-    icon: Dices,
-    color: "from-purple-500 to-purple-600",
+    description: "La reference pour vos serveurs GTA V Roleplay.",
+    icon: Gamepad2,
+    color: "text-blue-400",
+    bgColor: "bg-blue-400/10",
   },
   {
-    id: "life",
-    title: "Nova Life",
-    description: "Serveurs robustes pour les simulateurs de vie",
+    title: "RedM",
+    description: "L'univers du Far West accessible a petit prix.",
+    icon: Sword,
+    color: "text-red-400",
+    bgColor: "bg-red-400/10",
+  },
+  {
+    title: "Garry's Mod",
+    description: "Stabilite maximale pour DarkRP, TTT et plus.",
     icon: Gamepad2,
-    color: "from-cyan-500 to-cyan-600",
+    color: "text-yellow-400",
+    bgColor: "bg-yellow-400/10",
+  },
+  {
+    title: "Nova Life",
+    description: "Hebergement specialise pour la communaute Nova Life RP.",
+    icon: Globe,
+    color: "text-cyan-400",
+    bgColor: "bg-cyan-400/10",
+  },
+  {
+    title: "Jeux de Survie",
+    description: "ARK, Rust, DayZ, Palworld. Des serveurs robustes.",
+    icon: Flame,
+    color: "text-amber-500",
+    bgColor: "bg-amber-500/10",
+  },
+  {
+    title: "Assetto Corsa",
+    description: "Infrastructure performante pour vos courses.",
+    icon: Car,
+    color: "text-orange-400",
+    bgColor: "bg-orange-400/10",
+  },
+  {
+    title: "Bot Discord",
+    description: "Hebergez vos bots NodeJS, Python, Java 24/7.",
+    icon: MessageSquare,
+    color: "text-purple-400",
+    bgColor: "bg-purple-400/10",
   },
 ]
 
 export default function GameCategories() {
   return (
-    <section id="games" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10 animate-pulse-glow"></div>
-      <div
-        className="absolute bottom-0 left-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 animate-pulse-glow"
-        style={{ animationDelay: "1s" }}
-      ></div>
-
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-fadeInUp">Jeux supportés</h2>
-          <p
-            className="text-xl text-muted-foreground max-w-2xl mx-auto animate-fadeInUp"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Des serveurs optimisés et performants pour tous vos jeux préférés
+    <section id="services" className="py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-balance">Nos Services</h2>
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            Decouvrez notre gamme complete de solutions d{"'"}hebergement.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {games.map((game, index) => {
-            const Icon = game.icon
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          {services.map((service) => {
+            const Icon = service.icon
             return (
-              <div key={game.id} className="animate-fadeInUp" style={{ animationDelay: `${0.1 + index * 0.08}s` }}>
-                <Card className="border-border bg-card hover:border-accent/50 transition-all duration-300 hover:shadow-xl hover:shadow-accent/30 hover:scale-105 overflow-hidden group h-full">
-                  <CardHeader>
-                    <div
-                      className={`w-12 h-12 rounded-lg bg-gradient-to-br ${game.color} flex items-center justify-center mb-4 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300`}
-                    >
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    <CardTitle className="text-xl">{game.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{game.description}</p>
-                  </CardContent>
-                </Card>
-              </div>
+              <Card key={service.title} className="bg-card border-border hover:border-accent/40 transition-all group">
+                <CardContent className="pt-6 flex flex-col h-full gap-4">
+                  <div className={`w-12 h-12 rounded-xl ${service.bgColor} flex items-center justify-center`}>
+                    <Icon className={`w-6 h-6 ${service.color}`} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-lg mb-1.5">{service.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                  </div>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full bg-transparent border-border hover:border-accent hover:text-accent group-hover:border-accent/50 mt-auto"
+                    onClick={() => {
+                      const el = document.getElementById("pricing")
+                      if (el) el.scrollIntoView({ behavior: "smooth" })
+                    }}
+                  >
+                    {"Decouvrir"}
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </Button>
+                </CardContent>
+              </Card>
             )
           })}
-        </div>
-
-        <div
-          className="mt-12 p-6 bg-gradient-to-r from-card to-card/50 border border-accent/30 rounded-lg animate-fadeInUp"
-          style={{ animationDelay: "0.8s" }}
-        >
-          <h3 className="text-lg font-bold mb-2 text-accent">🤖 Bot Discord</h3>
-          <p className="text-muted-foreground">
-            Ton bot en ligne 24h/24 et 7j/7 pour le prix d'un café. À partir de 0,50€/mois!
-          </p>
         </div>
       </div>
     </section>

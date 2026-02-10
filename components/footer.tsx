@@ -1,79 +1,44 @@
-"use client"
-
 import Link from "next/link"
-import { Mail, MessageCircle } from "lucide-react"
+import { Mail, MessageSquare } from "lucide-react"
 
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-card/50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 font-bold text-lg text-accent mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-accent to-primary rounded-lg flex items-center justify-center">
-                <span className="text-xs font-bold text-accent-foreground">NV</span>
-              </div>
-              <span>Net Vora</span>
-            </div>
+            <span className="font-bold text-lg text-foreground mb-4 block">Net Vora</span>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Hebergement de serveurs de jeux performant et accessible. Une infrastructure fiable pour votre communaute.
+              Hebergement de serveurs de jeux performant et accessible. Infrastructure fiable basee en France.
             </p>
           </div>
 
           <div>
-            <h4 className="font-bold mb-4">Nos offres</h4>
+            <h4 className="font-semibold mb-4 text-foreground">Nos offres</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <Link href="#games" className="hover:text-accent transition">Tous les jeux</Link>
-              </li>
-              <li>
-                <Link href="#pricing" className="hover:text-accent transition">Grille tarifaire</Link>
-              </li>
-              <li>
-                <a href="https://nexahost.m1x.ovh/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition">
-                  Commander un serveur
-                </a>
-              </li>
+              <li><Link href="#services" className="hover:text-foreground transition">Tous les services</Link></li>
+              <li><Link href="#pricing" className="hover:text-foreground transition">Grille tarifaire</Link></li>
+              <li><a href="https://nexahost.m1x.ovh/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition">Boutique</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold mb-4">Ressources</h4>
+            <h4 className="font-semibold mb-4 text-foreground">Liens utiles</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <a href="https://discord.gg/BAzdvJDVXq" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition">
-                  Serveur Discord
-                </a>
-              </li>
-              <li>
-                <a href="https://panel.nexahost.m1x.ovh" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition">
-                  Panel de gestion
-                </a>
-              </li>
-              <li>
-                <a href="mailto:contact@nexa-host.zk-web.fr" className="hover:text-accent transition">
-                  Nous contacter
-                </a>
-              </li>
+              <li><a href="https://discord.gg/Wkk4qFxpcm" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition">Discord</a></li>
+              <li><a href="http://89.187.7.128/auth/login" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition">Panel de gestion</a></li>
+              <li><Link href="#faq" className="hover:text-foreground transition">FAQ</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold mb-4">Communaute</h4>
-            <div className="space-y-3">
-              <button
-                onClick={() => window.open("https://discord.gg/BAzdvJDVXq", "_blank")}
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition"
-              >
-                <MessageCircle className="w-4 h-4" />
-                Discord
-              </button>
-              <a
-                href="mailto:contact@nexa-host.zk-web.fr"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition"
-              >
-                <Mail className="w-4 h-4" />
-                contact@nexa-host.zk-web.fr
+            <h4 className="font-semibold mb-4 text-foreground">Contact</h4>
+            <div className="space-y-3 text-sm text-muted-foreground">
+              <a href="https://discord.gg/Wkk4qFxpcm" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-foreground transition">
+                <MessageSquare className="w-4 h-4" /> Discord
+              </a>
+              <a href="mailto:contact@nexa-host.zk-web.fr" className="flex items-center gap-2 hover:text-foreground transition">
+                <Mail className="w-4 h-4" /> contact@nexa-host.zk-web.fr
               </a>
             </div>
           </div>
@@ -83,9 +48,9 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>2026 Net Vora. Tous droits reserves. SIREN : 999288335</p>
             <div className="flex gap-6">
-              <Link href="/mentions-legales" className="hover:text-accent transition">Mentions legales</Link>
-              <Link href="/politique-confidentialite" className="hover:text-accent transition">Confidentialite</Link>
-              <Link href="/conditions-utilisation" className="hover:text-accent transition">CGU</Link>
+              <Link href="/mentions-legales" className="hover:text-foreground transition">Mentions legales</Link>
+              <Link href="/politique-confidentialite" className="hover:text-foreground transition">Confidentialite</Link>
+              <Link href="/conditions-utilisation" className="hover:text-foreground transition">CGU</Link>
             </div>
           </div>
         </div>
