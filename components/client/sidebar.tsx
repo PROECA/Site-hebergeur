@@ -50,8 +50,8 @@ export function ClientSidebar({ user }: { user: User }) {
           {/* Logo */}
           <div className="p-6 border-b border-accent/20">
             <Link href="/" className="flex items-center gap-3">
-              <Image src="/nexahost-logo.png" alt="Nexa-Host" width={40} height={40} className="rounded-lg" />
-              <span className="text-xl font-bold text-accent">Nexa-Host</span>
+              <Image src="/nexahost-logo.png" alt="Net Vora" width={40} height={40} className="rounded-lg" />
+              <span className="text-xl font-bold text-accent">Net Vora</span>
             </Link>
           </div>
 

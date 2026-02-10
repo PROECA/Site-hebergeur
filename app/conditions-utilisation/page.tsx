@@ -1,131 +1,115 @@
 import { Header } from "@/components/header"
 import Footer from "@/components/footer"
+import type { Metadata } from "next"
 
-export const metadata = {
-  title: "Conditions d'Utilisation - Nexa-Host",
-  description: "Conditions d'utilisation de Nexa-Host",
+export const metadata: Metadata = {
+  title: "Conditions generales d'utilisation - Net Vora",
 }
 
 export default function ConditionsUtilisation() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="min-h-screen bg-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <h1 className="text-4xl font-bold mb-8">Conditions d'Utilisation</h1>
+      <main className="flex-1 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold mb-2">{"Conditions generales d'utilisation"}</h1>
+          <p className="text-muted-foreground mb-10">Derniere mise a jour : 10 fevrier 2026</p>
 
-          <div className="space-y-8 text-foreground">
+          <div className="space-y-8 text-foreground leading-relaxed">
             <section>
-              <h2 className="text-2xl font-bold mb-4">1. Acceptation des conditions</h2>
-              <div className="text-muted-foreground space-y-2">
-                <p>
-                  En accédant à et en utilisant le site Nexa-Host, vous acceptez d'être lié par ces Conditions
-                  d'Utilisation. Si vous ne les acceptez pas, veuillez cesser d'utiliser le site immédiatement.
-                </p>
-              </div>
+              <h2 className="text-2xl font-semibold mb-3">Article 1 - Objet</h2>
+              <p>
+                Les presentes conditions generales regissent l{"'"}utilisation des services proposes par Net Vora, association immatriculee sous le numero SIREN 999 288 335. En utilisant nos services, vous acceptez sans reserve l{"'"}ensemble de ces conditions.
+              </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">2. Utilisation du service</h2>
-              <div className="text-muted-foreground space-y-2">
-                <p>Vous vous engagez à :</p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>Utiliser le service de manière conforme à la loi</li>
-                  <li>Ne pas utiliser le service à des fins illégales ou nuisibles</li>
-                  <li>Ne pas contourner ou désactiver les mesures de sécurité</li>
-                  <li>Respecter les droits de propriété intellectuelle</li>
-                  <li>Ne pas faire de spam ou harcèlement</li>
-                </ul>
-              </div>
+              <h2 className="text-2xl font-semibold mb-3">Article 2 - Description des services</h2>
+              <p>
+                Net Vora propose des services d{"'"}hebergement de serveurs de jeux video. Nos offres comprennent la mise a disposition de ressources materielles (processeur, memoire, stockage) et d{"'"}un panneau de gestion pour administrer votre serveur.
+              </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">3. Comptes utilisateur</h2>
-              <div className="text-muted-foreground space-y-2">
-                <p>
-                  Si vous créez un compte utilisateur, vous êtes responsable de maintenir la confidentialité de vos
-                  identifiants et de votre mot de passe. Vous acceptez l'entière responsabilité de toutes les activités
-                  effectuées sous votre compte.
-                </p>
-              </div>
+              <h2 className="text-2xl font-semibold mb-3">Article 3 - Inscription et compte</h2>
+              <p>
+                Pour utiliser nos services, vous devez creer un compte en fournissant des informations exactes et a jour. Vous etes responsable de la confidentialite de vos identifiants de connexion. Toute activite realisee depuis votre compte est consideree comme effectuee par vous.
+              </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">4. Serveurs et contenu</h2>
-              <div className="text-muted-foreground space-y-2">
-                <p>
-                  En hébergeant votre serveur chez Nexa-Host, vous déclarez que le contenu que vous hébergez est légal
-                  et n'enfreint pas les droits de tiers. Vous êtes entièrement responsable du contenu de votre serveur.
-                </p>
-              </div>
+              <h2 className="text-2xl font-semibold mb-3">Article 4 - Tarification et paiement</h2>
+              <p>Nos tarifs sont indiques en euros TTC sur notre site. Le paiement s{"'"}effectue :</p>
+              <ul className="mt-3 space-y-2 text-muted-foreground list-disc list-inside">
+                <li>A la commande, pour la premiere periode de service</li>
+                <li>De maniere recurrente (mensuelle) pour les renouvellements</li>
+              </ul>
+              <p className="mt-3">
+                En cas de non-paiement a echeance, le service pourra etre suspendu apres un delai de grace raisonnable. Nous vous enverrons un rappel par e-mail avant toute suspension.
+              </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">5. Suspension et résiliation</h2>
-              <div className="text-muted-foreground space-y-2">
-                <p>
-                  Nexa-Host se réserve le droit de suspendre ou de résilier votre service si vous violez ces Conditions
-                  d'Utilisation ou la loi, sans notification préalable et sans remboursement.
-                </p>
-              </div>
+              <h2 className="text-2xl font-semibold mb-3">Article 5 - Utilisation acceptable</h2>
+              <p>Vous vous engagez a ne pas utiliser nos services pour :</p>
+              <ul className="mt-3 space-y-2 text-muted-foreground list-disc list-inside">
+                <li>Toute activite illegale ou contraire a l{"'"}ordre public</li>
+                <li>La diffusion de contenus haineux, discriminatoires ou violents</li>
+                <li>Des attaques informatiques (DDoS, phishing, etc.)</li>
+                <li>Le minage de crypto-monnaies sans autorisation prealable</li>
+                <li>La revente de nos services sans accord ecrit</li>
+              </ul>
+              <p className="mt-3">
+                Tout manquement pourra entrainer la suspension ou la resiliation de votre service sans preavis ni remboursement.
+              </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">6. Limitation de responsabilité</h2>
-              <div className="text-muted-foreground space-y-2">
-                <p>
-                  DANS TOUTE LA MESURE PERMISE PAR LA LOI, NEXA-HOST NE SERA PAS RESPONSABLE DE TOUT DOMMAGE INDIRECT,
-                  SPÉCIAL, CONSÉCUTIF OU PUNITIF, Y COMPRIS LES PERTES DE PROFIT, MÊME SI ELLE A ÉTÉ AVISÉE DE LA
-                  POSSIBILITÉ DE TELS DOMMAGES.
-                </p>
-              </div>
+              <h2 className="text-2xl font-semibold mb-3">Article 6 - Disponibilite et support</h2>
+              <p>
+                Nous faisons notre possible pour garantir une disponibilite de 99,9% sur l{"'"}ensemble de nos services. En cas de panne, notre equipe intervient dans les meilleurs delais. Le support est accessible via notre serveur Discord et par e-mail.
+              </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">7. Garantie</h2>
-              <div className="text-muted-foreground space-y-2">
-                <p>
-                  Le service est fourni « tel quel » sans aucune garantie, expresse ou implicite. Nexa-Host ne garantit
-                  pas que le service sera ininterrompu ou exempt d'erreurs.
-                </p>
-              </div>
+              <h2 className="text-2xl font-semibold mb-3">Article 7 - Sauvegardes</h2>
+              <p>
+                Bien que nous effectuions des sauvegardes regulieres, il est de votre responsabilite de conserver vos propres copies de sauvegarde. Net Vora ne pourra etre tenu responsable en cas de perte de donnees.
+              </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">8. Frais et paiement</h2>
-              <div className="text-muted-foreground space-y-2">
-                <p>
-                  Les frais d'hébergement sont facturés selon la tarification affichée sur le site. Le paiement doit
-                  être effectué conformément aux conditions de votre plan d'hébergement. Le non-paiement peut entraîner
-                  la suspension de votre service.
-                </p>
-              </div>
+              <h2 className="text-2xl font-semibold mb-3">Article 8 - Resiliation</h2>
+              <p>
+                Vous pouvez resilier votre abonnement a tout moment depuis votre espace client ou en nous contactant. La resiliation prend effet a la fin de la periode de facturation en cours. Aucun remboursement au prorata ne sera effectue.
+              </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">9. Modifications des conditions</h2>
-              <div className="text-muted-foreground space-y-2">
-                <p>
-                  Nexa-Host peut modifier ces Conditions d'Utilisation à tout moment. Les modifications prendront effet
-                  dès leur publication. Votre utilisation continue du service après les modifications constitue votre
-                  acceptation des nouvelles conditions.
-                </p>
-              </div>
+              <h2 className="text-2xl font-semibold mb-3">Article 9 - Limitation de responsabilite</h2>
+              <p>
+                Net Vora ne saurait etre tenue responsable des dommages indirects resultant de l{"'"}utilisation ou de l{"'"}impossibilite d{"'"}utiliser ses services. Notre responsabilite totale est limitee au montant des sommes versees par le client au cours des 3 derniers mois.
+              </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">10. Contact</h2>
-              <div className="text-muted-foreground space-y-2">
-                <p>
-                  Pour toute question concernant ces Conditions d'Utilisation, veuillez nous contacter à :
-                  support@nexa-host.com
-                </p>
-              </div>
+              <h2 className="text-2xl font-semibold mb-3">Article 10 - Droit applicable</h2>
+              <p>
+                Les presentes conditions sont soumises au droit francais. En cas de litige, les parties s{"'"}engagent a rechercher une solution amiable avant toute action judiciaire. A defaut, les tribunaux competents seront ceux du siege social de l{"'"}association.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-3">Contact</h2>
+              <p>
+                Pour toute question concernant ces conditions, contactez-nous a{" "}
+                <a href="mailto:contact@nexa-host.zk-web.fr" className="text-accent hover:underline">contact@nexa-host.zk-web.fr</a>.
+              </p>
             </section>
           </div>
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

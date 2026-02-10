@@ -43,7 +43,7 @@ export default async function ClientDashboard() {
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold">Bienvenue, {user?.user_metadata?.first_name || "Client"} !</h1>
-        <p className="text-muted-foreground mt-1">Voici un apercu de votre compte Nexa-Host</p>
+        <p className="text-muted-foreground mt-1">Voici un apercu de votre compte Net Vora</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

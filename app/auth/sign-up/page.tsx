@@ -60,14 +60,14 @@ export default function SignUpPage() {
       <div className="w-full max-w-md">
         <div className="flex flex-col items-center gap-6">
           <Link href="/" className="flex items-center gap-3">
-            <Image src="/nexahost-logo.png" alt="Nexa-Host" width={50} height={50} className="rounded-lg" />
-            <span className="text-2xl font-bold text-accent">Nexa-Host</span>
+            <Image src="/nexahost-logo.png" alt="Net Vora" width={50} height={50} className="rounded-lg" />
+            <span className="text-2xl font-bold text-accent">Net Vora</span>
           </Link>
 
           <Card className="w-full bg-card/50 border-accent/20">
             <CardHeader>
               <CardTitle className="text-2xl text-center">Creer un compte</CardTitle>
-              <CardDescription className="text-center">Rejoignez Nexa-Host et hebergez vos serveurs</CardDescription>
+              <CardDescription className="text-center">Rejoignez Net Vora et hebergez vos serveurs</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSignUp}>
