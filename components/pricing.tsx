@@ -251,9 +251,8 @@ const pricingTiers = [
 export default function Pricing() {
   const { ref, isVisible } = useIntersectionObserver()
 
-  const handleCommander = (gameName: string, tierName: string, tierPrice: string) => {
-    const encodedPrice = tierPrice.replace(",", ".")
-    window.location.href = `/checkout?game=${encodeURIComponent(gameName)}&tier=${encodeURIComponent(tierName)}&price=${encodedPrice}`
+  const handleCommander = () => {
+    window.open("https://nexahost.m1x.ovh/", "_blank")
   }
 
   return (
@@ -322,7 +321,7 @@ export default function Pricing() {
 
                       <Button
                         className="w-full bg-accent hover:bg-accent/90 text-accent-foreground transition-all hover:scale-105 hover:shadow-lg hover:shadow-accent/50 btn-premium"
-                        onClick={() => handleCommander(category.name, plan.tier, plan.price)}
+                        onClick={() => handleCommander()}
                       >
                         Commander
                       </Button>

@@ -11,23 +11,17 @@ export function Header() {
 
   return (
     <header className="border-b border-accent/20 bg-background/80 backdrop-blur-md sticky top-0 z-50">
-      <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-accent/10 via-transparent to-accent/5 pointer-events-none hidden"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-50 hidden"></div>
-
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between relative z-10">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 rounded-lg p-2 -m-2">
-          <div className="relative">
-            <Image src="/nexahost-logo.png" alt="Nexa-Host Logo" width={50} height={40} className="h-10 w-auto" />
-          </div>
+          <Image src="/nexahost-logo.png" alt="Net Vora" width={50} height={40} className="h-10 w-auto" />
           <span className="text-lg font-bold bg-gradient-to-r from-accent via-cyan-300 to-accent bg-clip-text text-transparent hidden sm:inline">
-            Nexa-Host
+            Net Vora
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           <Link href="#games" className="text-foreground hover:text-accent transition-colors duration-300">
-            Jeux
+            Nos jeux
           </Link>
           <Link href="#pricing" className="text-foreground hover:text-accent transition-colors duration-300">
             Tarifs
@@ -38,7 +32,7 @@ export function Header() {
           <Button variant="ghost" asChild className="text-accent hover:text-accent hover:bg-accent/10">
             <Link href="/client">
               <User className="w-4 h-4 mr-2" />
-              Espace Client
+              Mon espace
             </Link>
           </Button>
           <Button
@@ -62,31 +56,25 @@ export function Header() {
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
         <button className="md:hidden p-2 hover:bg-accent/10 rounded-lg" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
-      {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden border-t border-accent/20 bg-background/90 backdrop-blur-md">
           <div className="px-4 py-4 flex flex-col gap-3">
-            <Link href="#games" className="hover:text-accent transition-colors duration-300 py-2">
-              Jeux
+            <Link href="#games" className="hover:text-accent transition-colors duration-300 py-2" onClick={() => setIsOpen(false)}>
+              Nos jeux
             </Link>
-            <Link href="#pricing" className="hover:text-accent transition-colors duration-300 py-2">
+            <Link href="#pricing" className="hover:text-accent transition-colors duration-300 py-2" onClick={() => setIsOpen(false)}>
               Tarifs
             </Link>
             <div className="flex flex-col gap-2 pt-2">
-              <Button
-                variant="ghost"
-                asChild
-                className="w-full text-accent hover:text-accent hover:bg-accent/10 justify-start"
-              >
+              <Button variant="ghost" asChild className="w-full text-accent hover:text-accent hover:bg-accent/10 justify-start">
                 <Link href="/client">
                   <User className="w-4 h-4 mr-2" />
-                  Espace Client
+                  Mon espace
                 </Link>
               </Button>
               <Button

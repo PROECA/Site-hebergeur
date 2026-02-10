@@ -8,8 +8,8 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Nexa-Host - Hébergement de Serveurs de Jeux",
-  description: "Hébergement haute performance pour vos serveurs de jeux. Gmod, Survival, Assetto Corsa et bien plus!",
+  title: "Net Vora - Hébergement de Serveurs de Jeux",
+  description: "Hébergement haute performance pour vos serveurs de jeux. FiveM, Minecraft, Rust, Gmod et bien plus. Infrastructure fiable, support 24/7.",
   generator: "v0.app",
   icons: {
     icon: "/favicon.png",
